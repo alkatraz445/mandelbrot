@@ -98,7 +98,7 @@ fn render(
     for row in 0..bounds.1 {
         for column in 0..bounds.0 {
             let point = pixel_to_point(bounds, (column, row), upper_left, lower_right);
-            pixel[row * bounds.0 + column] = match escape_time(point, 255) {
+            pixel[row * bounds.0 + column] = match escape_time(point, 4096) {
                 None => 0,
                 Some(count) => 255 - count as u8,
             }
